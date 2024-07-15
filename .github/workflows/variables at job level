@@ -1,14 +1,13 @@
-###### VARIABLES ASSIGNING AT WORKFLOW LEVEL##########
 name: variablkes and secrects
 
 on: push
-
-env:
-   DOCKER_REGISTRY: docker.io
-   DOCKER_USERNMAE: pstr3355
-   IMAGE_NAME: Github-actions-nginx
+###### VARIABLES ASSIGNING AT JOB LEVEL##########
 jobs:
     docker_job:
+        env:
+            DOCKER_REGISTRY: docker.io
+            DOCKER_USERNMAE: pstr3355
+            IMAGE_NAME: Github-actions-nginx
         runs-on: ubuntu-latest
         steps:
             - name: Docker build
@@ -22,6 +21,10 @@ jobs:
             - name: Docker publish
               run: echo docker push
     deploy:
+        env:
+            DOCKER_REGISTRY: docker.io
+            DOCKER_USERNMAE: pstr3355
+            IMAGE_NAME: Github-actions-nginx
         runs-on: ubuntu-latest
         steps:
             - name: Docker run
