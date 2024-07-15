@@ -13,7 +13,7 @@ jobs:
         run: echo "Hey, welcome to my githubu actions first workflow"
 
       - name: list files
-        run: ls
+        run: ls -a
 
       - name: Please read the files
         run: cat README.md
