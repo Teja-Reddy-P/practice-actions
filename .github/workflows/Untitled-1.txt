@@ -1,0 +1,4 @@
+env:
+                CONTAINER_REGISTRY: docker.io
+                DOCKER_USERNAME: pstr3355
+                IMAGE_NAME: github-actions-nginx
