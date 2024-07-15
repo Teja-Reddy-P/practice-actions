@@ -10,10 +10,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: welcome mesage
-        run: echo "Hey, welcome to my githubu actions first workflow"
+        run: |
+         echo "Hey, welcome to my githubu actions first workflow"
+         ls -a
+         cat README.md
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover, I am a DRAGON.....RAWR" >> dragon.txt
+        
 
-      - name: list files
-        run: ls -a
-
-      - name: Please read the files
-        run: cat README.md
