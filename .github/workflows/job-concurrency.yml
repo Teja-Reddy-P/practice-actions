@@ -20,6 +20,11 @@ jobs:
             - name: Docker publish
               run: echo docker push
     deploy:
+        needs: docker_job
+        concurrency: 
+            group: production-deployment
+            cancel-in-progress: true
+
         env:
             DOCKER_REGISTRY: docker.io
             IMAGE_NAME: Github-actions-nginx
@@ -29,4 +34,3 @@ jobs:
               run: |
                 echo docker run -d -p 8080:80 ${{ env.DOCKER_REGISTRY}}/${{ vars.DOCKER_USERNAME}}/$env.IMAGE_NAME:latest
                 sleep 600s
-                
