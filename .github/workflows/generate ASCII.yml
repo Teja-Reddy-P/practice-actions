@@ -1,7 +1,6 @@
 name: Generate ASCII Artwork
 
-on: 
-    push
+on: push
 
 jobs:
     ascii_job:
@@ -27,16 +26,5 @@ jobs:
 
       - name: list repo files
         run: ls -ltra
-        
-        
-        
-        
-        
-        run: |
-         echo "Hey, welcome to my githubu actions first workflow"
-         ls -ltra
-         cat README.md
-      - name: Generate ASCII Artwork
-        run: cowsay -f dragon "Run for cover, I am a DRAGON.....RAWR" >> dragon.txt
 
 
