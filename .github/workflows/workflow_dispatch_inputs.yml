@@ -15,6 +15,10 @@ on:
                - integration
                - all
             required: true
+         environment:
+            description: "Choose an environment"
+            type: environment
+            required: true
          build-number:
             description: "custom build number"
             type: number
