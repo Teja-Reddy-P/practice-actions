@@ -25,4 +25,4 @@ jobs:
         runs-on: Ubuntu-latest
         steps:
             - name: workflow event name
-              run: echo this workflow /job/step is executed for event type - ${{runner.name}}
+              run: echo this workflow /job/step is executed for event type - ${{runner.arch}}
