@@ -1,0 +1,28 @@
+name: Exploring workflow activities and filters
+
+on:
+    workflow_dispatch: 
+    push: 
+        branches: 
+            - main
+            - '!feature/*' # ignoring pushing to any feature branch name starting with feature using !
+        #branches-ignore: 
+         #   - feature/*    # Feature/add-music, feature/updateImages (/* indicates if any feature branch having any name after feature like feature/dev or feature/prod)
+          #  - test/**    # /** indicates any branches having test/feature/dev or test/prod/fearture after branch name if there are any sub-names to the branch name then we will use /** if it is 2 names kets say if it is 3 names use /***
+ 
+ 
+    pull_request: 
+        types: 
+            - opened
+            - closed
+        paths-ignore:     # workflow will only run when a pull-request that includes a change on any file other than README.md
+            - README.md
+        branches:         # configures your workflow to only run on pull-requests that target specific branches.
+            - main
+
+jobs:
+    first_job:
+        runs-on: Ubuntu-latest
+        steps:
+            - name: workflow event name
+              run: echo this workflow /job/step is executed for event type - ${{github.event_name}}
